@@ -1,2 +1,1 @@
-# CanDiCommerce
 Open Source e-commerce web application.
