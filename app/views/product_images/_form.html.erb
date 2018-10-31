@@ -1,0 +1,21 @@
+
+<%= simple_form_for(@product_image, :html => {:multipart => true}  ) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+	<% if @product_image.persisted? %>
+	    <%= f.association :product %>
+	<% else %>
+    	    <%= f.association :product, selected: @product.id %>
+	<% end %>
+
+    <%= f.file_field :data %>
+
+    <%= f.input :order_no %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

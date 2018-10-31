@@ -10,7 +10,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181030231157) do
+ActiveRecord::Schema.define(version: 20181031115207) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.text "tags"
+    t.integer "order_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "product_images", force: :cascade do |t|
+    t.integer "product_id"
+    t.binary "data"
+    t.string "file_name"
+    t.string "mime_type"
+    t.integer "order_no"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_product_images_on_product_id"
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.decimal "price", precision: 8, scale: 2
+    t.decimal "cost_per_item", precision: 8, scale: 2
+    t.boolean "has_shipping"
+    t.string "seo_page_title"
+    t.text "seo_page_description"
+    t.integer "order_no"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "tests", force: :cascade do |t|
     t.string "title"

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  product: one
+  data: 
+  file_name: MyString
+  mime_type: MyString
+  order_no: 1
+
+two:
+  product: two
+  data: 
+  file_name: MyString
+  mime_type: MyString
+  order_no: 1
